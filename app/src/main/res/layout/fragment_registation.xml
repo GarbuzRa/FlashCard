@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistationFragment"
+    tools:context=".presentation.ui.RegistationFragment"
     android:background="#00004E"
     android:orientation="vertical">
 
@@ -73,7 +73,7 @@
             style="@style/ButtonRegister"/>
 
      <LinearLayout
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:orientation="horizontal"
          android:layout_gravity="center">
