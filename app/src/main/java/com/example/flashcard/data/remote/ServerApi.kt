@@ -14,7 +14,7 @@ interface ServerApi {
         "Authorization: Bearer ${BuildConfig.ACCESS_TOKEN}"
     )
     @POST("/auth/v1/signup")
-    fun registerUser(@Body user: User): Call<UserResponce>
+   suspend fun registerUser(@Body user: User): Call<UserResponce>
 }
 
 data class User(

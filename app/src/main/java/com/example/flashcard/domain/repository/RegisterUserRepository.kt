@@ -5,5 +5,5 @@ import com.example.flashcard.domain.model.UserResponceDomain
 import retrofit2.Call
 
 interface RegisterUserRepository {
-    fun registerUser(user: UserDomain): Call<UserResponceDomain>
+   suspend fun registerUser(user: UserDomain): Result<UserResponceDomain>
 }
