@@ -1,6 +1,8 @@
 package com.example.flashcard.di
 
+import com.example.flashcard.data.remote.RegisterUserRepositoryImpl
 import com.example.flashcard.data.remote.ServerApi
+import com.example.flashcard.domain.repository.RegisterUserRepository
 import com.example.flashcard.domain.usecase.RegisterUserUseCase
 import com.example.flashcard.presentation.viewmodel.RegistrationViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -18,8 +20,10 @@ class Koin
         .create(ServerApi::class.java)
         }
 
-    factory { RegisterUserUseCase(get()) }
+    single<RegisterUserRepository>{RegisterUserRepositoryImpl(get())}
 
-viewModel{ RegistrationViewModel(get())}
+    factory {RegisterUserUseCase(get())}
 
-    }
+    viewModel{RegistrationViewModel(get())}
+
+}

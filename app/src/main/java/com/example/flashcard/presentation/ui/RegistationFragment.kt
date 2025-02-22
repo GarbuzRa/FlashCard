@@ -28,7 +28,7 @@ class RegistationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.registerButton.setOnClickListener{
-            register()
+            registerTest()
         }
 
         observeViewModel()
@@ -52,6 +52,19 @@ class RegistationFragment : Fragment() {
         val password = binding.RegistrPassword.text.toString()
         val confirmPassword = binding.ConfirmPassword.text.toString()
         val email = binding.RegistrEmail.text.toString()
+
+        if (password == confirmPassword) {
+            val user = UserDomain(email, password)
+            viewModel.registerUser(user)
+        } else {
+            Toast.makeText(requireContext(), "Пальчики толстые, да?)) Сложно попасть по клавишам?)))", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun registerTest() {
+        val password = "PSW"
+        val confirmPassword = "SWP"
+        val email = "example@mail.com"
 
         if (password == confirmPassword) {
             val user = UserDomain(email, password)
