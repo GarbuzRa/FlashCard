@@ -4,6 +4,7 @@ import com.example.flashcard.domain.model.UserDomain
 import com.example.flashcard.domain.model.UserResponceDomain
 import com.example.flashcard.domain.repository.RegisterUserRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.HttpException
@@ -11,6 +12,12 @@ import retrofit2.HttpException
 class RegisterUserRepositoryImpl(val api: ServerApi): RegisterUserRepository {
 
     override suspend fun registerUser(user: UserDomain): Result<UserResponceDomain> = withContext(Dispatchers.IO) {
+        /*
+        Нашу функцию необходимо обернуть в Result, потому что таким образом мы обрабатываем ошибки (или их отсутствие) связанные
+        с получением информации с сервера - это делается в блоке try-catch.
+
+        Первая проверка
+        */
       try {
           val responce = api.registerUser(user.toData()).execute()
           if (responce.isSuccessful) {

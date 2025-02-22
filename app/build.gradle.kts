@@ -17,7 +17,13 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
+//после активации.
+            /*
+            1. Так как у properties свой синтаксис, то мне необходимо создать экземпляр класса,
+            который сможет читать этот синтаксис.
+            2. я обращаюсь к корневому обьекту и перу у него файл (по названию), в котором хранится нужный мне токен
+            3.
+             */
         val properties = Properties()
         val file = rootProject.file("develop.properties")
         properties.load(file.inputStream())
@@ -36,7 +42,7 @@ android {
 
     buildFeatures {
         viewBinding = true
-        buildConfig = true
+        buildConfig = true //активирую
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
