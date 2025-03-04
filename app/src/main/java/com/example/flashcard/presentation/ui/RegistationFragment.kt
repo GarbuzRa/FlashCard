@@ -63,7 +63,7 @@ class RegistationFragment : Fragment() {
 
     private fun registerTest() {
         val password = "PSW"
-        val confirmPassword = "SWP"
+        val confirmPassword = "PSW"
         val email = "example@mail.com"
 
         if (password == confirmPassword) {

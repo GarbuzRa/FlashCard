@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+    id("com.google.gms.google-services") version "4.4.1" apply false
 }
 
 android {
@@ -78,4 +79,7 @@ dependencies {
     //ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
+
 }

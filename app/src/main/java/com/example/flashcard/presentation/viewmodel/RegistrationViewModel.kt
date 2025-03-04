@@ -5,13 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.flashcard.data.remote.UserResponce
+import com.example.flashcard.data.repository.RegisterUserRepositoryImpl
 import com.example.flashcard.domain.model.UserDomain
 import com.example.flashcard.domain.model.UserResponceDomain
+import com.example.flashcard.domain.repository.RegisterUserRepository
 import com.example.flashcard.domain.usecase.RegisterUserUseCase
 import kotlinx.coroutines.launch
 
 class RegistrationViewModel(val useCase: RegisterUserUseCase): ViewModel() {
-
     private val _responce = MutableLiveData<Result<UserResponceDomain>>()
     val responce: LiveData<Result<UserResponceDomain>> = _responce
 
